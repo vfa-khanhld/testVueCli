@@ -1,0 +1,6 @@
+npm run serve
+
+khai bao moi component trong App.vue 
+Import -> khai bao cach xai` -> su dung 
+
+template ref la gan ten cho template sau nay de su dung, de goi 
