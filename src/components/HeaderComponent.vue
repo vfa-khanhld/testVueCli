@@ -1,5 +1,5 @@
 <template>
-  <h1>This is Header Component</h1>
+  <h1 class="fade">This is Header Component</h1>
 </template>
 
 <script>
