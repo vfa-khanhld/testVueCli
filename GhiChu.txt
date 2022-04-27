@@ -9,22 +9,32 @@ conditional rendering là đieu kien de render
 -----------------------------------------------------------------------------------------------------------------------------
 
 click: sk click
+
 mouseover: sk hover
+
 mouseleave: sk sau khi hover
+
 dblclick: sk double click
+
 mousemove: di chuyen chuot truc toa do x,y
 
 offsetX, offsetY: do dai rong cua the tag 
+
 screenX, screenY: do dai rong cua man hinh
+
 clientX, clientY: do dai rong cua trinh duyet
+
 cac ham deu co default param la event, de truyen nhung param moi thi
-    ben khai bao su kien phai khai bao sukien($event, them param, them param)
+ben khai bao su kien phai khai bao sukien($event, them param, them param)
 
 -----------------------------------------------------------------------------------------------------------------------------
 
 v-for="product in products" 
+
 v-for dung2 nhu vong lap for trong js
+
 products o day la trong data 
+
 product duoc hieu la tung phan tu trong products (tu dat ten)
 
 -----------------------------------------------------------------------------------------------------------------------------
@@ -49,14 +59,74 @@ template ref la gan ten cho template sau nay de su dung, de goi
 
 -----------------------------------------------------------------------------------------------------------------------------
 
-css trong cac component mac dinh se la globally scope, phai them attribute scoped vao the style de quy dinh css do chi la block scope 
-    ap dung cho moi component do thoi
+css trong cac component mac dinh se la globally scope, phai them attribute scoped vao the style de quy dinh css do chi la 
+block scope ap dung cho moi component do thoi
 
 Tat ca config muon load duoc deu ph import trong main.js
 
 -----------------------------------------------------------------------------------------------------------------------------
 
 ky thuat props la ky thuat giup truyen cac du lieu thong qua cac thuoc tinh cua component day
+
 validator la 1 ky thuat dung de validate mang, neu k co phan tu do thi se warning
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+de gui su kien tu thg component con ra thg cha dung $emit, nguoc lai dung $refs va khai bao ref tai thg cha
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Slots duoc hieu la chua cho, vi du header co the thay doi theo tung phan nen minh phai chua Slot cho no, vi base component
+duoc su dung nhieu lan nen no khong the co dinh, vue cung cap thang Slots de giai quyet van de do
+
+https://vuejs.org/guide/components/slots.html#fallback-content
+
+Mac dinh <slot /> se mac dinh render tu template App, co the dat ten slot theo cu phap <slot name="" /> 
+
+Muon viet template nao thi khai bao template + ten slot 
+
+<template v-slot:header>
+      <div>
+        
+      </div>
+</template>
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Event Modifier:
+
+<!-- the click event's propagation will be stopped -->
+<a @click.stop="doThis"></a>
+
+<!-- the submit event will no longer reload the page -->
+<form @submit.prevent="onSubmit"></form>
+
+<!-- modifiers can be chained -->
+<a @click.stop.prevent="doThat"></a>
+
+<!-- just the modifier -->
+<form @submit.prevent></form>
+
+<!-- only trigger handler if event.target is the element itself -->
+<!-- i.e. not from a child element -->
+<div @click.self="doThat">...</div>
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Tai sao lai can teleport Component: vi muc dich quan ly, chung ta can ph nhat quan, quan ly de dang
+
+dem ra ngoai ngang cap voi thang nao do 
+
+ban chat thg teleport la 1 component nen cu phap cung giong thg component
+
+<teleport>
+    
+    code here
+
+</teleport>
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
 
 -----------------------------------------------------------------------------------------------------------------------------

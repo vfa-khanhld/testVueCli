@@ -1,14 +1,17 @@
 <template>
-  <div class="modal fade show">
+  <div class="modal fade" @click.self="onCloseModal">
     <div class="modal-dialog">
       <div class="modal-content" :class="{ 'bg-color': theme === 'content' }">
         <div class="modal-header">
-          <h1>{{ title }}</h1>
+          <slot name="header" />
         </div>
         <div class="modal-body">
-          <p>{{ content }}</p>
+          <!-- <p>{{ content }}</p> -->
+          <slot />
         </div>
-        <div class="modal-footer">Footer</div>
+        <div class="modal-footer">
+          <slot name="footer" />
+        </div>
       </div>
     </div>
   </div>
@@ -35,6 +38,11 @@ export default {
   },
   data() {
     return {};
+  },
+  methods: {
+    onCloseModal() {
+      this.$emit("cancel");
+    },
   },
 };
 </script>
